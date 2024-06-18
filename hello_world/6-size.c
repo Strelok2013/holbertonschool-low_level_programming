@@ -5,7 +5,7 @@
  *
  *Prints out da sizes of all da literals
  *
- *Return - 0 Successful
+ *Return: 0 Successful
  */
 
 int main(void)
