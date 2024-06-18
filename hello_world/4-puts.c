@@ -1,4 +1,12 @@
 #include <stdio.h>
+/**
+ main- Entry point
+ Description: A C program that prints exactly
+ "Programming is like buildinga multilingual puzzle
+ using the puts() function
+
+ Return: Always 0 (Success)
+*/
 
 int main(void)
 {
