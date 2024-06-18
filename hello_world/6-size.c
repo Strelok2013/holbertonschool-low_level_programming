@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ *main - Entry point
+ *
+ *Prints out da sizes of all da literals
+ *
+ *Return - 0 Successful
+ */
+
 int main()
 {
   printf("Size of a char: %i byte(s)\n", sizeof(char));
@@ -7,5 +15,5 @@ int main()
   printf("Size of a long int: %i byte(s)\n", sizeof(long int));  
   printf("Size of a long long int: %i byte(s)\n", sizeof(long long int));
   printf("Size of a float: %i byte(s)\n", sizeof(float));
-    return 0;
+  return 0;
 }
