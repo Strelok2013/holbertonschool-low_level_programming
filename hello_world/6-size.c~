@@ -1,0 +1,4 @@
+int main()
+{
+  printf("Size of a char: %i bytes", sizeof(char));
+}
