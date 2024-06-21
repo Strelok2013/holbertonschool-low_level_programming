@@ -6,10 +6,16 @@ int main(void)
   int i = 0;
   for (i = 0; i < 10; i++)
     {
-      putchar(i + 48);
-      putchar(44);
-      putchar(32);
+      if(i != 9)
+	{
+	  putchar(i + 48);
+	  putchar(44);
+	  putchar(32);
+	}
+      else
+	{
+	  putchar(i + 48);
+	}
     }
-  putchar(12);
-  return(0);
+    return(0);
 }
