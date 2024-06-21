@@ -11,5 +11,5 @@ int main(void)
       putchar(32);
     }
   putchar(12);
-  xreturn(0);
+  return(0);
 }
