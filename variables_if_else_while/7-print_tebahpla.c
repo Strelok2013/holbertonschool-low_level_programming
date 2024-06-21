@@ -3,7 +3,8 @@
 
 int main(void)
 {
-  for(int i = 0; i < 26; i++)
+  int i = 0;
+  for(i = 0; i < 26; i++)
     {
       putchar(122 - i);
     }

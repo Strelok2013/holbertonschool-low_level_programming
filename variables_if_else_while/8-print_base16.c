@@ -3,11 +3,12 @@
 
 int main(void)
 {
-  for(int i = 0; i < 10; i++)
+  int i = 0;
+  for(i = 0; i < 10; i++)
     {
       putchar(i + 48);
     }
-  for(int i = 0; i < 5; i++)
+  for(i = 0; i < 5; i++)
     {
       putchar(i + 97);
     }
