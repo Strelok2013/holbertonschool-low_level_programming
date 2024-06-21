@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-inf main(void)
+int main(void)
 {
   int i = 0;
   for (i = 97; i < 123; i++)
