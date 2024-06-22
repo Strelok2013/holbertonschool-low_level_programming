@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <time.h>
+61;7603;1c#include <time.h>
 #include <stdlib.h>
 
 /**
@@ -31,6 +31,5 @@ int main(void)
 	{
 		printf("is negative\n");
 	}
-	
 	return (0);
 }
