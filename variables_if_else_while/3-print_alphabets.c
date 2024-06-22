@@ -2,18 +2,24 @@
 #include <time.h>
 #include <stdlib.h>
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
 int main(void)
 {
-  int i = 0;
-  for (i = 97; i < 123; i++)
-    {
-      putchar(i);
-    }
-  for (i = 65; i < 91; i++)
-    {
-      putchar(i);
-    }
-  putchar(12);
-  
-  return(0);
+	int i = 0;
+
+	for (i = 0; i < 26; i++)
+	{
+		putchar(i + 65);
+	}
+	for( i = 0; i < 26; i++)
+	{
+		putchar(i + 97);
+	}
+	
+	return (0);
 }
