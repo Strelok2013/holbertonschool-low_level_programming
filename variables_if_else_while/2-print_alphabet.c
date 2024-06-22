@@ -11,7 +11,8 @@
 int main(void)
 {
 	int i = 0;
-	for (i = 0; i < 26; i ++)
+	
+	for (i = 0; i < 26; i++)
 	{
 		putchar(i + 97);
 	}
