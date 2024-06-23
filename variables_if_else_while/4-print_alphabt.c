@@ -11,7 +11,7 @@
 int main(void)
 {
 	int i = 0;
-	for (int = 0; i < 26; i++)
+	for (i = 0; i < 26; i++)
 	{
 		if (i != 5 && i != 17)
 		{
@@ -19,5 +19,5 @@ int main(void)
 		}
 	}
 	putchar(10);
-	return(0);
+	return (0);
 }
