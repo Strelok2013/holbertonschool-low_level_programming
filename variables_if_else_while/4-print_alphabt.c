@@ -13,7 +13,7 @@ int main(void)
 	int i = 0;
 	for (i = 0; i < 26; i++)
 	{
-		if (i != 5 && i != 17)
+		if (i == 5 && i == 17)
 		{
 			putchar(i + 97);
 		}
