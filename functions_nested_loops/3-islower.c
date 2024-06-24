@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry point
@@ -16,7 +16,7 @@ int main(void)
 int _islower(int c)
 {
 	int r = 0;
-	
+
 	if (c >= 97 && c <= 122)
 	{
 		r = 1;
