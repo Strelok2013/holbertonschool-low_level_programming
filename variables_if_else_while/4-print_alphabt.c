@@ -9,13 +9,14 @@
 
 int main(void)
 {
-	int i = 0;
-	for (i = 0; i < 26; i++)
+	char ch = 'a';
+	while (ch <= 'a')
 	{
-		if (i != 5 && i != 17)
+		if (ch != 'e' && ch != 'q')
 		{
-			putchar(i + 97);
+			putchar(ch);
 		}
+		ch++;
 	}
 	putchar(10);
 	return (0);
