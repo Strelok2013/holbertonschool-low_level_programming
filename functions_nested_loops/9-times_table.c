@@ -21,25 +21,42 @@ void times_table(void)
 			r = i * j;
 			if (r < 10)
 			{
-				_putchar('0' + r);
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
+				if(j == 10)
+				{
+					_putchar('0' + r);
+					_putchar(',');
+				}
+				else
+				{
+					_putchar('0' + r);
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
 				
 			}
 			else
 			{
 				mod = r % 10;
 				tenth = r / 10;
-				_putchar('0' + tenth);
-				_putchar('0' + mod);
-				_putchar(',');
+				if(j == 10)
+				{
+					_putchar('0' + tenth);
+					_putchar('0' + mod);
+				}
+				else
+				{
+					_putchar('0' + tenth);
+					_putchar('0' + mod);
+					_putchar(',');
+				}
+				
+			}
 				_putchar(' ');
 			}
 			j++;
 		}
 		j = 0;
-		_putchar(',');
 		_putchar('\n');
 		i++;
 	}
