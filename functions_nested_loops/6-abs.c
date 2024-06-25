@@ -7,7 +7,7 @@
  * Return: int, Absolute value of the given int
  */
 
-int _abs(int v);
+int _abs(int v)
 {
 	int r = 0;
 

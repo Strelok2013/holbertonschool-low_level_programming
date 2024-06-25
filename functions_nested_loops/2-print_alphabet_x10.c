@@ -6,7 +6,7 @@
  * Return: Void, returns a void pointer
  */
 
-void print_alphabet_x10(void)
+int print_alphabet_x10(void)
 {
 	int i = 0;
 	int j = 0;
