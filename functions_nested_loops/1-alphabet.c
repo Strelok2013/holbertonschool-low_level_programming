@@ -1,4 +1,4 @@
-#include "main.h
+#include "main.h"
 
 /**
  * main - Entry point
@@ -17,7 +17,7 @@ int main(void)
 void print_alphabet(void)
 {
 	int i = 0;
-	
+
 	for (i = 0; i < 26; i++)
 	{
 		putchar(97 + i);
