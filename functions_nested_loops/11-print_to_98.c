@@ -12,8 +12,6 @@ void print_to_98(int n)
 {
 	int i = 0;
 
-	/* Check whether greater or less than 98, then count towards 98 */
-
 	if (n == 98)
 	{
 		printf("%d", n);
@@ -23,7 +21,7 @@ void print_to_98(int n)
 		i = n;
 		while (i <= 98)
 		{
-			if(i == 98)
+			if (i == 98)
 			{
 				printf("%d", i);
 			}
@@ -39,7 +37,7 @@ void print_to_98(int n)
 		i = n;
 		while (i >= 98)
 		{
-			if(i == 98)
+			if (i == 98)
 			{
 				printf("%d", i);
 			}
