@@ -1,17 +1,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * _isalpha - checks whether the int value corresponds to an alphanumeric char
+ * @c: integer value to check
  *
- * Return: Always 0 (Success)
+ * Return: int, returns 1 if alphanumeric, 0 if not
  */
-
-int _isalpha(int c);
-
-int main(void)
-{
-	return (0);
-}
 
 int _isalpha(int c)
 {

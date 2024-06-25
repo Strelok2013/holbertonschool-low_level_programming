@@ -1,17 +1,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * _islower - prints 1 if the int value corresponds to a lowercase character
+ * @c : input value to test
  *
- * Return: Always 0 (Success)
+ * Return: int, returns a 1 on if lowercase and 0 if not
  */
-
-int _islower(int c);
-
-int main(void)
-{
-	return (0);
-}
 
 int _islower(int c)
 {

@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
+ * jack_bauer - prints every minute of Jack Bauer's day
  *
+ * Return: Void, returns void pointer
  */
 
 void jack_bauer(void)

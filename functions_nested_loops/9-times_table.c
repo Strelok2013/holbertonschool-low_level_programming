@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
+ * times_table - prints the times table up to 9
  *
- *
- *
+ * Return: Void, returns void pointer
  */
 
 void times_table(void)

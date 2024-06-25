@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
+ * print_sign - prints the value of the passed integer
+ * @n: integer to check
  *
- *
- *
- *
+ * Return: int, returns positive, negative or zero.
  */
 
 int print_sign(int n)
