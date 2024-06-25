@@ -15,8 +15,8 @@ void print_alphabet_x10(void)
 	{
 		for (j = 0; j < 26; j++)
 		{
-			putchar(j + 97);
+			_putchar(j + 97);
 		}
-		putchar(10);
+		_putchar(10);
 	}
 }

@@ -11,27 +11,35 @@ void times_table(void)
 	int i = 0;
 	int j = 0;
 	int r = 0;
+	int mod = 0;
+	int tenth = 0;
 
-	while (i < 9)
+	while (i < 10)
 	{
-		while (j < 9)
+		while (j < 10)
 		{
 			r = i * j;
-			_putchar('0' + r);
-			_putchar(',');
 			if (r < 10)
 			{
+				_putchar('0' + r);
+				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
+				
 			}
 			else
 			{
+				mod = r % 10;
+				tenth = r / 10;
+				_putchar('0' + tenth);
+				_putchar('0' + mod);
+				_putchar(',');
 				_putchar(' ');
 			}
-			if (i == 9)
-			{
-				_putchar('\n');
-			}
+			j++;
 		}
+		j = 0;
+		_putchar('\n');
+		i++;
 	}
 }
