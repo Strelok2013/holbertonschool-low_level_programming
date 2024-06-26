@@ -13,12 +13,12 @@ void jack_bauer(void)
 	int tenth_m = 0;
 	int mod_m = 0;
 	int i = 0;
-	
+
 	for (i = 0; i < 1440; i++)
 	{
 		tenth_h = i / 600;
 		mod_h =  (i / 60) % 10;
-		tenth_m = (i / 10) % 10;
+		tenth_m = (i % 60) / 10;
 		mod_m = i % 10;
 		_putchar('0' + tenth_h);
 		_putchar('0' + mod_h);
