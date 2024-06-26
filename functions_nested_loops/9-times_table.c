@@ -21,31 +21,19 @@ void times_table(void)
 			r = i * j;
 			mod = r % 10;
 			tenth = (r - mod) / 10;
-			if (r > 9)
+			if (tenth != 0)
 			{
 				_putchar('0' + tenth);
-				_putchar('0' + mod);
-				_putchar(' ');
-				//if (j != 9)
-				//{
-				//	_putchar(',');
-				//	_putchar(' ');
-				//}
 			}
-			else
+			_putchar('0' + mod);
+			if (j != 9)
 			{
-				_putchar('0' + r);
+				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
-				//if (j != 9)
-				//{
-				//	_putchar(',');
-				//	_putchar(' ');
-				//	if (tenth == 0)
-				//	{
-				//		_putchar(' ');
-				//	}
-				//}
+				if (i * (j + 1) < 10)
+				{
+					_putchar(' ');
+				}
 			}
 		}
 		_putchar('\n');
