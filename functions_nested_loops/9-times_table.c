@@ -14,49 +14,40 @@ void times_table(void)
 	int mod = 0;
 	int tenth = 0;
 
-	while (i < 10)
+	for (i = 0; i < 10; i++)
 	{
-		while (j < 10)
+		for (j = 0; j < 10; j++)
 		{
 			r = i * j;
-			if (r < 10)
+			mod = r % 10;
+			tenth = (r - mod) / 10;
+			if (r > 9)
 			{
-				if(j == 10)
-				{
-					_putchar('0' + r);
-					_putchar(',');
-				}
-				else
-				{
-					_putchar('0' + r);
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
-				
+				_putchar('0' + tenth);
+				_putchar('0' + mod);
+				_putchar(' ');
+				//if (j != 9)
+				//{
+				//	_putchar(',');
+				//	_putchar(' ');
+				//}
 			}
 			else
 			{
-				mod = r % 10;
-				tenth = r / 10;
-				if(j == 10)
-				{
-					_putchar('0' + tenth);
-					_putchar('0' + mod);
-				}
-				else
-				{
-					_putchar('0' + tenth);
-					_putchar('0' + mod);
-					_putchar(',');
-				}
-				
+				_putchar('0' + r);
+				_putchar(' ');
+				_putchar(' ');
+				//if (j != 9)
+				//{
+				//	_putchar(',');
+				//	_putchar(' ');
+				//	if (tenth == 0)
+				//	{
+				//		_putchar(' ');
+				//	}
+				//}
 			}
-		        _putchar(' ');
-			j++;
 		}
-		j = 0;
 		_putchar('\n');
-		i++;
 	}
 }
