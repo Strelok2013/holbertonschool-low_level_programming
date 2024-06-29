@@ -1,5 +1,5 @@
 #include "main.h"
-61;7603;1c
+
 /**
  * print_rev - prints a given string in reverse
  * @s: pointer to char array or string
