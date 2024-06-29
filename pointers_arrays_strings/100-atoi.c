@@ -12,7 +12,6 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int sign = 1;
-	int done = 0;
 	int sum = 0;
 
 	while (s[i] == ' ')
