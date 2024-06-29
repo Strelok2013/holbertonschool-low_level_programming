@@ -32,7 +32,7 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-	if (sum > 0)
+	if (sum != 0)
 	{
 		return (sum *= sign);
 	}
