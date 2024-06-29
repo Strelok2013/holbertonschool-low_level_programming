@@ -4,7 +4,7 @@
  * print_rev - prints a given string in reverse
  * @s: pointer to char array or string
  *
- * Return: void, always returns void pointer
+ * Return: void, always returns void
  */
 
 void print_rev(char *s)
@@ -15,8 +15,7 @@ void print_rev(char *s)
 	{
 		i++;
 	}
-	i -= 1;
-	while (i > 0)
+	while (i >= 0)
 	{
 		_putchar(s[i]);
 		i--;

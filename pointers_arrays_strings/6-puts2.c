@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts - prints every second character including the first one
+ * puts2 - prints every second character including the first one
  * @str: pointer to char array or string
  *
  * Return: void, always returns void pointer
