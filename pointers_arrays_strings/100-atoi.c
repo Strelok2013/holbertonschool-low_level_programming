@@ -19,15 +19,15 @@ int _atoi(char *s)
 		if (s[i] < ':' && s[i] > '/')
 		{
 			sum *= 10;
-			sum += (s[i] - '0');
-			if(s[i + 1] > ':' && s[i + 1] < '/')
-			{
-				break;
-			}
+			sum += (s[i] - '0');			
 		}
 		if (s[i] == '-')
 		{
 			sign *= -1;
+		}
+		if(s[i + 1] > ':' && s[i + 1] < '/')
+		{
+			break;
 		}
 		i++;
 	}
