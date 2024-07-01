@@ -32,12 +32,11 @@ int _atoi(char *s)
 				done = 1;
 			}
 		}
-		if (s[i] == '-')
+		if (s[i] == '-' && evalnum == 0)
 		{
 			sign *= -1;
 		}
 		i++;
 	}
-	
 	return (sum * sign);
 }
