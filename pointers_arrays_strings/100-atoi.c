@@ -25,7 +25,7 @@ int _atoi(char *s)
 		{
 			sign *= -1;
 		}
-		if(s[i + 1] > ':' && s[i + 1] < '/')
+		if(s[i + 1] > '9' && s[i + 1] < '0')
 		{
 			break;
 		}
