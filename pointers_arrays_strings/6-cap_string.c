@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
+ * cap_string -capitalizes every word in a string
+ * @s: pointer to char array
  *
- *
- *
- *
- *
+ * Return: char pointer, the modified string
  */
 
-char *cap_string(char * s)
+char *cap_string(char *s)
 {
 	int i = 0;
 	int j = 0;
