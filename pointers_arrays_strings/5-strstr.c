@@ -1,26 +1,27 @@
 #include "main.h"
 
 /**
+ * _strstr - prints the first occurrence of a given substring
+ * @haystack: pointer to char array
+ * @needle: pointer to char array
  *
- *
- *
- *
- *
+ * Return: pointer to char, first instance of given substring
  */
 
-char *_strstr(char * haystack, char *needle)
+char *_strstr(char *haystack, char *needle)
 {
 	int i = 0;
-	int j = 0;
+	int done = 0;
 	char *p = 0;
 
-	if(haystack[n] == needle[0])
+	while (haystack[i] != '\0' && !done)
 	{
-		// First matching char found
-		while (haystack[n] == needle[m])
+		if (haystack[i] == needle[0])
 		{
-			// While the nth element matches mth element
+			p = &haystack[i];
+			done = 1;
 		}
+		i++;
 	}
-	
+	return (p);
 }
