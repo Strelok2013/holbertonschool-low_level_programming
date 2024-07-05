@@ -5,7 +5,7 @@
  * @s: pointer to char array, string to search
  * @accept: pointer to char array, set of bytes to check against
  *
- * Return; pointer to char, first matching char in @s
+ * Return: pointer to char, first matching char in @s
  */
 
 char *_strpbrk(char *s, char *accept)
