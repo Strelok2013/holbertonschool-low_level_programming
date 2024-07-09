@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * init_zero - helper function that initializes an array's elements to 0
+ * @p: pointer to int array
+ * @size: size of the array
+ *
+ * Return: void, returns void null pointer.
+ */
+
+void init_zero(int *p, int size)
+{
+	int i = 0;
+
+	while (i < size)
+	{
+		p[i] = 0;
+		i++;
+	}
+}
+
+/**
  * alloc_grid - dynamically allocates a 2 dimensional array
  * @width: width of the array
  * @height: height of the array
@@ -14,27 +33,29 @@ int **alloc_grid(int width, int height)
 	int i = 0;
 
 	if (width < 1 || height < 1)
-		return (0);
-	if (malloc(sizeof(int *) * height))
-	{
-		p = malloc(sizeof(int *) * height);
-	}
-	else
 	{
 		return (0);
 	}
-	while (i < height)
+	p = malloc(sizeof(int *) * height);
+	if (!p)
 	{
-		if (malloc(sizeof(int) * width))
+		return (0);
+	}
+
+	for (i = 0; i < height; i++)
+	{
+		p[i] = malloc(sizeof(int) * width);
+		if (!p[i])
 		{
-			p[i] = malloc(sizeof(int) * width);
-			memset(p[i], 0, sizeof(int) * width);
-		}
-		else
-		{
+			for (; i >= 0; i--)
+			{
+				free(p[i]);
+			}
+			free(p);
 			return (0);
 		}
-		i++;
+		init_zero(p[i], width);
 	}
 	return (p);
 }
+
