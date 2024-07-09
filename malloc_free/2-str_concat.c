@@ -25,9 +25,15 @@ char *str_concat(char *s1, char *s2)
 	if (!p)
 		return (0);
 	while (k < i)
+	{
 		p[k] = s1[k];
+		k++;
+	}
 	k = 0;
 	while (k < j)
+	{
 		p[i + k] = s2[k];
+		k++;
+	}
 	return (p);
 }
