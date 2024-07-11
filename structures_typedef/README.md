@@ -1,0 +1,1 @@
+Project folder for 'C - Structures, typedef'.
