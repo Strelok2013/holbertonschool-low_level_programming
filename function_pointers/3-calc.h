@@ -4,10 +4,9 @@
 #include <stdlib.h>
 
 /**
- *
- *
- *
- *
+ * struct op - struct to hold an operator linked to a function pointer
+ * @op: operator character
+ * @f: pointer to a function that will perform and operation
  *
  */
 

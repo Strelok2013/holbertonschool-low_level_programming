@@ -1,5 +1,13 @@
 #include "3-calc.h"
 
+/**
+ * get_op_func - function that returns an int value
+ *               given two ints and an an operator
+ * @s: pointer to char holding the operator
+ *
+ * Return: pointer to a function given a specific operator
+ */
+
 int (*get_op_func(char *s))(int a, int b)
 {
 	op_t ops[] = {
