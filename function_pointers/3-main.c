@@ -2,6 +2,8 @@
 
 /**
  * main - check the code
+ * @argc: number of args
+ * @argv: array of strings containing args
  *
  * Return: Always 0.
  */
