@@ -1,4 +1,4 @@
-include "function_pointers.h"
+#include "function_pointers.h"
 
 /**
  * print_name - prints a name using a given function pointer
@@ -10,8 +10,8 @@ include "function_pointers.h"
 
 void print_name(char *name, void (*f)(char *))
 {
-	if (f)
+	if (f && name)
 		(*f)(name);
 	else
-		return (0);
+		exit(1);
 }

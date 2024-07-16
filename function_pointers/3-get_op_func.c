@@ -1,4 +1,4 @@
-#include "3-op_functions.c"
+#include "3-calc.h"
 
 int (*get_op_func(char *s))(int a, int b)
 {
@@ -12,9 +12,7 @@ int (*get_op_func(char *s))(int a, int b)
 	};
 	int i = 0;
 
-	while (&ops[i].op != &s)
+	while (ops[i].op != 0 && *(ops[i].op) != *s)
 		i++;
-	if (i == 5)
-		return (0);
-	return (ops[i].f(a, b));
+	return (ops[i].f);
 }
