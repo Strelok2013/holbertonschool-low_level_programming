@@ -44,15 +44,13 @@ void print_string(va_list arg)
 	char *s;
 
 	s = va_arg(arg, char *);
-	if (s)
+	if (!s)
 	{
 		printf("%s", s);
-	}
-	else
-	{
-		printf("(nil)");
 		return;
 	}
+	printf("%s", s);
+
 }
 
 /**
