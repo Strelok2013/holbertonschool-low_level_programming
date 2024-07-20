@@ -1,65 +1,79 @@
 #include "variadic_functions.h"
 
+void print_char(va_list arg);
+void print_int(va_list arg);
+void print_float(va_list arg);
+void print_string(va_list arg);
+void print_all(const char * const format, ...);
+
 /**
- * print_char - prints a char given an arg
- * @arg: the arg in question
- *
- * Return: void, returns null void pointer
+ * print_char - Prints a char.
+ * @arg: A list of arguments pointing to
+ *       the character to be printed.
  */
 void print_char(va_list arg)
 {
-	printf("%c", va_arg(arg, int));
+	char letter;
+
+	letter = va_arg(arg, int);
+	printf("%c", letter);
 }
 
 /**
- * print_int - prints an int from arg
- * @arg: arg to use
- *
- * Return: void, returns null void pointer
+ * print_int - Prints an int.
+ * @arg: A list of arguments pointing to
+ *       the integer to be printed.
  */
 void print_int(va_list arg)
 {
-	printf("%d", va_arg(arg, int));
+	int num;
+
+	num = va_arg(arg, int);
+	printf("%d", num);
 }
 
 /**
- * print_float - prints a float from arg
- * @arg: arg to use
- *
- * Return: void, returns null void pointer
+ * print_float - Prints a float.
+ * @arg: A list of arguments pointing to
+ *       the float to be printed.
  */
 void print_float(va_list arg)
 {
-	printf("%f", va_arg(arg, double));
+	float num;
+
+	num = va_arg(arg, double);
+	printf("%f", num);
 }
 
 /**
- * print_string - prints a string from arg
- * @arg: arg to use
- *
- * Return: void, retuns null void pointer
+ * print_string - Prints a string.
+ * @arg: A list of arguments pointing to
+ *       the string to be printed.
  */
 void print_string(va_list arg)
 {
-	char *s;
+	char *str;
 
-	s = va_arg(arg, char *);
-	if (!s)
+	str = va_arg(arg, char *);
+
+	if (str == NULL)
 	{
-		printf("%s", s);
+		printf("(nil)");
 		return;
 	}
-	printf("%s", s);
 
+	printf("%s", str);
 }
 
 /**
- * print_all - prints anything
- * @format: list of the types of arguments passed
+ * print_all - Prints anything, followed by a new line.
+ * @format: A string of characters representing the argument types.
+ * @...: A variable number of arguments to be printed.
  *
- * Return: void, returns a null void pointer.
+ * Description: Any argument not of type char, int, float,
+ *              or char * is ignored.
+ *              If a string argument is NULL, (nil) is printed instead.
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
