@@ -73,19 +73,25 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(args, format);
-	while (format[i])
+
+	while (format && (*(format + i)))
 	{
 		j = 0;
-		while (j < 4 && (format[i] != *funcs[j].symbol))
+
+		while (j < 4 && (*(format + i) != *(funcs[j].symbol)))
 			j++;
+
 		if (j < 4)
 		{
 			printf("%s", separator);
 			funcs[j].print(args);
 			separator = ", ";
 		}
+
 		i++;
 	}
+
 	printf("\n");
+
 	va_end(args);
 }
