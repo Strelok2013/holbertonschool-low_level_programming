@@ -1,11 +1,12 @@
 #include "variadic_functions.h"
 
 /**
+ * print_numbers - prints numbers separated by a separator
+ * @separator: the separator to use
+ * @n: Number of args to process
+ * @...: Variable number of args
  *
- *
- *
- *
- *
+ * Return: void, returns null void pointer
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -19,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d", va_arg(args, int));
 		if (separator && i != (n - 1))
 		{
-			print("%s", separator);
+			printf("%s", separator);
 		}
 		i++;
 	}

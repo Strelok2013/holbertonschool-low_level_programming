@@ -1,11 +1,12 @@
 #include "variadic_functions.h"
 
 /**
+ * print_strings - prints strings separated by a given separator
+ * @separator: separator to use
+ * @n: number of args to process
+ * @...: variable number of args
  *
- *
- *
- *
- *
+ * Return: void, returns null void pointer
  */
 
 void print_strings(const char *separator, const unsigned int n, ...)

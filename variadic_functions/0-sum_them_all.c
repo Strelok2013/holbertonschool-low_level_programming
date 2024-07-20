@@ -1,11 +1,11 @@
 #include "variadic_functions.h"
 
 /**
+ * sum_them_all - prints the sum of all given numbers
+ * @n: number of ints to add up
+ * @...: variable number of args
  *
- *
- *
- *
- *
+ * Return: Sum of all passed in args
  */
 
 int sum_them_all(const unsigned int n, ...)
