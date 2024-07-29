@@ -8,7 +8,7 @@
  * Return: list_t *, a pointer to the newly created node.
  */
 
-list_t *add_node_end(list_t **head, const char*str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *newNode = malloc(sizeof(list_t)), *last;
 	unsigned int i = 0;
