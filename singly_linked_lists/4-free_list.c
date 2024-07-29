@@ -9,7 +9,7 @@
 
 void free_list(list_t *head)
 {
-	list_t* next_node;
+	list_t *next_node;
 
 	if (!head)
 		return;
