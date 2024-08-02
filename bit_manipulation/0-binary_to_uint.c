@@ -14,7 +14,7 @@ unsigned int binary_to_uint(const char *b)
 	int size = 0;
 
 	if (!b)
-		return(0);
+		return (0);
 	while (b[size])
 		size++;
 	size -= 1;
@@ -27,5 +27,4 @@ unsigned int binary_to_uint(const char *b)
 		size--;
 	}
 	return (val);
-	
 }
