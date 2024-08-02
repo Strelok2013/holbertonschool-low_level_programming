@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
+ * clear_bit - clears a bit at given index of ulint
+ * @n: ulint value
+ * @index: index of desired bit
  *
- *
- *
- *
- *
+ * Return: int, 1 on success, -1 on failure
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)

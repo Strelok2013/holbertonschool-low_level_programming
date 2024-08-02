@@ -1,12 +1,10 @@
 #include "main.h"
 
 /**
+ * print_binary - prints an unsigned 32-bit integer in binary
+ * @n: integer value
  *
- *
- *
- *
- *
- *
+ * Return: void, returns a null void pointer
  */
 
 void print_binary(unsigned long int n)
