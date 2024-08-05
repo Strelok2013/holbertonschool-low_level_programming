@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
+ * create_file - creates a text file with content
+ * @filename: name of the file to create
+ * @text_content: text content to append into the file
  *
- *
- *
- *
- *
+ * Return: int, 1 on success, -1 on failure
  */
 
 int create_file(const char *filename, char *text_content)

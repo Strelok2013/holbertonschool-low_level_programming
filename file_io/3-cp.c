@@ -1,16 +1,107 @@
 #include "main.h"
 
 /**
+ * close_file - helper function that closes a file
+ * @fd: file descriptor to close
  *
+ * Return: int,  -1 on failure, something else on success.
+ */
+
+int close_file(int fd)
+{
+	int c;
+	c = close(fd);
+	if (c == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+	return (c);
+}
+
+/**
+ * open_file - helper function to open a file
+ * @filename: name of the file to open
+ * @file: which file we're opening, 0 for source, 1 for dest
  *
+ * Return: int, -1 on failure, anything else on success.
+ */
+
+int open_file(char *filename, char file)
+{
+	int o = -1;
+
+	if (file == 0)
+	{
+		o = open(filename, O_RDONLY);
+		if (o == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", filename);
+			close_file(o);
+			exit (98);
+		}
+		return (o);
+	}
+	if (file == 1)
+	{
+		o = open(filename, O_WRONLY | O_TRUNC);
+		if (o == -1)
+		{
+			o = open(filename, O_WRONLY | O_CREAT, 0664);
+			if (o == -1)
+			{
+				dprintf(2, "Error: Can't write to %s\n", filename);
+				close_file(o);
+				exit(99);
+			}
+			return (o);
+		}
+		return (o);
+	}
+	return (o);
+}
+
+/**
+ * read_write_from_buffer - helper function that reads and writes
+ * @from:
+ * @to:
+ * @buffer:
+ * @size:
  *
+ * Description: reads 1024 bytes from source file into buffer, then writes said bytes to dest file
+ * Return: ssize_t, number of bytes written. -1 on failure
+ */
+
+ssize_t read_write_from_buffer(int from, int to, void *buffer, ssize_t size)
+{
+	ssize_t r = 1, w;
+
+	while (r)
+	{
+		r = read(from, buffer, size);
+		w = write(to, buffer, r);
+		if (w == -1 || r == -1)
+		{
+			close_file(from);
+			close_file(to);
+			return (-1);
+		}
+			
+	}
+	return (r);
+}
+
+/**
+ * main - entry point
+ * @ac: number of args
+ * @av: pointer to array of pointers containing arg values
  *
- *
+ * Return: Always 0
  */
 
 int main (int ac, char **av)
 {
-	ssize_t f_from, f_to, w, r;
+	ssize_t f_from, f_to, wr;
 	char *buffer = malloc(sizeof(char) * 1024);
 	
 	if (ac != 3)
@@ -23,45 +114,15 @@ int main (int ac, char **av)
 		dprintf(2, "%s\n", "Failed to create rd/wr buffer.\n");
 		exit (96);
 	}
-	f_from = open(av[1], O_RDONLY);
-	if (f_from == -1)
+	f_from = open_file(av[1], 0);
+	f_to = open_file(av[2], 1);
+	wr = read_write_from_buffer(f_from, f_to, buffer, 1024);
+	if (wr == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		close(f_from);
-		exit (98);
+		dprintf(2, "Error: Can't write to %s\n", av[2]);
+		exit(99);
 	}
-	f_to = open(av[2], O_WRONLY | O_TRUNC);
-	if (f_to == -1)
-	{
-		close(f_to);
-		f_to = open(av[2], O_WRONLY | O_CREAT, 0664);
-		if (f_to == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
-			close(f_to);
-			exit(99);
-		}
-	}
-	r = read(f_from, buffer, 1024);
-	while (r)
-	{
-		r = read(f_from, buffer, 1024);
-		w = write(f_to, buffer, 1024);
-		if (w == -1 || r == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
-			close(f_from);
-			close(f_to);
-			exit (99);
-		}
-	}
-	
-	/*if (c == -1)
-	{
-		dprintf(2, "Error: Can't close fd %ld", f_to);
-		exit (100);
-		}*/
-	close(f_from);
-	close(f_to);
+	close_file(f_from);
+	close_file(f_to);
 	return (0);
 }

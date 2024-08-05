@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
+ * read_textfile - reads text from a file and outputs it to stdOUT
+ * @filename: name of the file to read from
+ * @letters: how many bytes to read from the file
  *
- *
- *
- *
- *
+ * Return ssize_t, the amount of characters written
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -27,5 +27,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	free(buffer);
-	close(fd);	return (count2);
+	close(fd);
+	return (count2);
 }
