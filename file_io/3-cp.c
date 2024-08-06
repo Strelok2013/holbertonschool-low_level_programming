@@ -37,7 +37,7 @@ int read_write_from_buffer(int from, int to, void *buffer, ssize_t size)
 	do
 	{
 		r = read(from, buffer, size);
-		w = write(buffer, to, r);
+		w = write(to, buffer, r);
 
 		if (from == -1 || r == -1)
 		{
