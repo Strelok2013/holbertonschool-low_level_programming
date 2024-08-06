@@ -61,7 +61,6 @@ int read_write_from_buffer(int from, int to, void *buffer, ssize_t size)
 
 int main (int ac, char **av)
 {
-	// Rewrite
 	int f_from, f_to, wr;
 	char *buffer = malloc(sizeof(1024));
 
@@ -77,7 +76,7 @@ int main (int ac, char **av)
 	}
 	f_from = open(av[1], O_RDONLY);
 	f_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	wr = read_write_from_buffer(f_from, f_to, buffer 1024);
+	wr = read_write_from_buffer(f_from, f_to, buffer, 1024);
 	if (wr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
