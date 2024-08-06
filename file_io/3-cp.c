@@ -32,8 +32,22 @@ int close_file(int fd)
 
 int read_write_from_buffer(int from, int to, void *buffer, ssize_t size)
 {
-	int r = 1, w;
+	int r, w;
 
+	do
+	{
+		r = read(from, buffer, size);
+		w = write(buffer, to, r);
+
+		if (from == -1 || r == -1)
+		{
+			return (-1);
+		}
+		if (to == -1 || w == -1)
+		{
+			return (-2);
+		}
+	} while (r);
 	return (r);
 }
 
@@ -48,20 +62,34 @@ int read_write_from_buffer(int from, int to, void *buffer, ssize_t size)
 int main (int ac, char **av)
 {
 	// Rewrite
-	int f_from, f_to;
+	int f_from, f_to, wr;
 	char *buffer = malloc(sizeof(1024));
 
 	if (ac != 3)
 	{
-		//first fail
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		exit(97);
 	}
 	if (!buffer)
 	{
-		// exit 99, can't write
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
 	}
 	f_from = open(av[1], O_RDONLY);
 	f_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	// while loop which reads and writes.
-	// checking to and from happens in read/write loop :P
+	wr = read_write_from_buffer(f_from, f_to, buffer 1024);
+	if (wr == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+	if (wr == -2)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
+	close_file(f_from);
+	close_file(f_to);
+	return (0);
 	
 }
