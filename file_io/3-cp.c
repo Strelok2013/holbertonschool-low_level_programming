@@ -34,20 +34,20 @@ int read_write_from_buffer(int from, int to, void *buffer, ssize_t size)
 {
 	int r, w;
 
-	do
-	{
-		r = read(from, buffer, size);
-		w = write(to, buffer, r);
-
+	do{
 		if (from == -1 || r == -1)
 		{
+			free(buffer);
 			return (-1);
 		}
+		w = write(to, buffer, r);
 		if (to == -1 || w == -1)
 		{
+			free(buffer);
 			return (-2);
 		}
-	} while (r);
+		r = read(from, buffer, size);
+	} while (r > 0);
 	return (r);
 }
 
